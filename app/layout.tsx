@@ -9,29 +9,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Zenbead — One moment. Every day.",
+  title: "ZenBead — One moment. Every day.",
   description:
     "A daily mindfulness app built around a single, quiet ritual. One insight. One breath. One bead. Coming soon to the App Store.",
   metadataBase: new URL("https://zenbead.io"),
   openGraph: {
-    title: "Zenbead — One moment. Every day.",
+    title: "ZenBead — One moment. Every day.",
     description:
       "A daily mindfulness app built around a single, quiet ritual. One insight. One breath. One bead.",
     url: "https://zenbead.io",
-    siteName: "Zenbead",
+    siteName: "ZenBead",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zenbead — One moment. Every day.",
+    title: "ZenBead — One moment. Every day.",
     description:
       "A daily mindfulness app built around a single, quiet ritual. One insight. One breath. One bead.",
   },
-  icons: {
-    icon: "/favicon.png",
-    apple: "/apple-touch-icon.png",
-  },
+  // Add app/favicon.ico or public/favicon.ico when you have assets; broken /favicon.png
+  // caused slow 404 + Turbopack compiles on every load in dev.
 };
 
 export default function RootLayout({

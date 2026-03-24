@@ -3,8 +3,8 @@ import Link from "next/link";
 import "../landing.css";
 
 export const metadata: Metadata = {
-  title: "Contact — Zenbead",
-  description: "Get in touch with the Zenbead team.",
+  title: "Contact — ZenBead",
+  description: "Get in touch with the ZenBead team.",
 };
 
 export default function ContactPage() {
@@ -15,11 +15,11 @@ export default function ContactPage() {
           <div className="nav__inner">
             <Link href="/" className="nav__brand">
               <div className="nav__bead" aria-hidden="true" />
-              <span className="nav__wordmark">zenbead</span>
+              <span className="nav__wordmark">ZenBead</span>
             </Link>
             <div className="nav__links">
               <Link href="/privacy" className="nav__link">Privacy</Link>
-              <Link href="/press" className="nav__link">Press</Link>
+              <Link href="/feedback" className="nav__link">Feedback</Link>
             </div>
           </div>
         </div>
@@ -45,8 +45,7 @@ export default function ContactPage() {
               <p className="contact-card__label">Press &amp; media</p>
               <a href="mailto:press@zenbead.io" className="contact-card__value">press@zenbead.io</a>
               <p className="contact-card__note">
-                Interview requests, review copies, brand assets. See also the{" "}
-                <Link href="/press" style={{ color: 'var(--color-sage)' }}>Press page</Link>.
+                Interview requests, review copies, brand assets.
               </p>
             </div>
 
@@ -71,7 +70,7 @@ export default function ContactPage() {
             <div className="legal__section">
               <h2>A note from us</h2>
               <p>
-                Zenbead was made by a very small team who care deeply about getting it
+                ZenBead was made by a very small team who care deeply about getting it
                 right. If something isn&apos;t working, or you have an idea that would
                 make the practice better, we genuinely want to hear it.
               </p>
@@ -89,15 +88,16 @@ export default function ContactPage() {
           <div className="footer__inner">
             <div className="footer__brand">
               <div className="footer__bead" aria-hidden="true" />
-              <span className="footer__name">zenbead</span>
+              <span className="footer__name">ZenBead</span>
             </div>
             <div className="footer__links">
               <Link href="/" className="footer__link">Home</Link>
               <Link href="/privacy" className="footer__link">Privacy</Link>
               <Link href="/terms" className="footer__link">Terms</Link>
-              <Link href="/press" className="footer__link">Press</Link>
+              <Link href="/feedback" className="footer__link">Feedback</Link>
+              <Link href="/contact" className="footer__link">Contact</Link>
             </div>
-            <p className="footer__copy">© {new Date().getFullYear()} Zenbead</p>
+            <p className="footer__copy">© {new Date().getFullYear()} ZenBead</p>
           </div>
         </div>
       </footer>

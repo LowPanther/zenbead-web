@@ -3,8 +3,8 @@ import Link from "next/link";
 import "../landing.css";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Zenbead",
-  description: "How Zenbead handles your data.",
+  title: "Privacy Policy — ZenBead",
+  description: "How ZenBead handles your data.",
 };
 
 export default function PrivacyPage() {
@@ -15,11 +15,11 @@ export default function PrivacyPage() {
           <div className="nav__inner">
             <Link href="/" className="nav__brand">
               <div className="nav__bead" aria-hidden="true" />
-              <span className="nav__wordmark">zenbead</span>
+              <span className="nav__wordmark">ZenBead</span>
             </Link>
             <div className="nav__links">
+              <Link href="/feedback" className="nav__link">Feedback</Link>
               <Link href="/contact" className="nav__link">Contact</Link>
-              <Link href="/press" className="nav__link">Press</Link>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
             <div className="legal__section">
               <h2>Overview</h2>
               <p>
-                Zenbead is a personal mindfulness app. We designed it to be private
+                ZenBead is a personal mindfulness app. We designed it to be private
                 by default — your journal is yours, and we collect as little as possible
                 to make the app work. This policy explains exactly what we collect, why,
                 and how you can control it.
@@ -44,7 +44,7 @@ export default function PrivacyPage() {
             <div className="legal__section">
               <h2>What we collect</h2>
               <p>
-                Zenbead works fully offline for the core practice (reading the insight,
+                ZenBead works fully offline for the core practice (reading the insight,
                 holding the bead, writing a reflection). If you choose to create a private
                 account for cross-device sync, we collect:
               </p>
@@ -96,7 +96,7 @@ export default function PrivacyPage() {
             <div className="legal__section">
               <h2>Push notifications</h2>
               <p>
-                Zenbead can send one optional daily reminder: <em>"Your daily insight is here."</em>
+                ZenBead can send one optional daily reminder: <em>"Your daily insight is here."</em>
                 Notifications require your permission, are scheduled locally on your device,
                 and can be turned off at any time in Settings. We do not send marketing
                 or re-engagement notifications.
@@ -118,7 +118,7 @@ export default function PrivacyPage() {
             <div className="legal__section">
               <h2>Children</h2>
               <p>
-                Zenbead is not directed at children under 13. We do not knowingly collect
+                ZenBead is not directed at children under 13. We do not knowingly collect
                 data from children under 13. If you believe a child has provided us with
                 personal data, please contact us and we will delete it promptly.
               </p>
@@ -149,15 +149,15 @@ export default function PrivacyPage() {
           <div className="footer__inner">
             <div className="footer__brand">
               <div className="footer__bead" aria-hidden="true" />
-              <span className="footer__name">zenbead</span>
+              <span className="footer__name">ZenBead</span>
             </div>
             <div className="footer__links">
               <Link href="/" className="footer__link">Home</Link>
               <Link href="/terms" className="footer__link">Terms</Link>
+              <Link href="/feedback" className="footer__link">Feedback</Link>
               <Link href="/contact" className="footer__link">Contact</Link>
-              <Link href="/press" className="footer__link">Press</Link>
             </div>
-            <p className="footer__copy">© {new Date().getFullYear()} Zenbead</p>
+            <p className="footer__copy">© {new Date().getFullYear()} ZenBead</p>
           </div>
         </div>
       </footer>

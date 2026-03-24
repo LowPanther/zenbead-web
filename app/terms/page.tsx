@@ -3,8 +3,8 @@ import Link from "next/link";
 import "../landing.css";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Zenbead",
-  description: "Terms governing your use of Zenbead.",
+  title: "Terms of Service — ZenBead",
+  description: "Terms governing your use of ZenBead.",
 };
 
 export default function TermsPage() {
@@ -15,11 +15,11 @@ export default function TermsPage() {
           <div className="nav__inner">
             <Link href="/" className="nav__brand">
               <div className="nav__bead" aria-hidden="true" />
-              <span className="nav__wordmark">zenbead</span>
+              <span className="nav__wordmark">ZenBead</span>
             </Link>
             <div className="nav__links">
+              <Link href="/feedback" className="nav__link">Feedback</Link>
               <Link href="/contact" className="nav__link">Contact</Link>
-              <Link href="/press" className="nav__link">Press</Link>
             </div>
           </div>
         </div>
@@ -34,16 +34,16 @@ export default function TermsPage() {
             <div className="legal__section">
               <h2>Acceptance</h2>
               <p>
-                By downloading or using Zenbead ("the App"), you agree to these Terms
+                By downloading or using ZenBead ("the App"), you agree to these Terms
                 of Service. If you do not agree, please do not use the App. These terms
                 apply to all users of the App and this website.
               </p>
             </div>
 
             <div className="legal__section">
-              <h2>What Zenbead is</h2>
+              <h2>What ZenBead is</h2>
               <p>
-                Zenbead is a personal mindfulness and journalling application. It is
+                ZenBead is a personal mindfulness and journalling application. It is
                 designed to support a personal practice of presence and reflection.
                 It is not a medical device, a therapy tool, or a substitute for
                 professional mental health support.
@@ -57,7 +57,7 @@ export default function TermsPage() {
             <div className="legal__section">
               <h2>Your account</h2>
               <p>
-                Zenbead can be used without an account. If you choose to create one,
+                ZenBead can be used without an account. If you choose to create one,
                 you are responsible for maintaining the security of your credentials
                 and for all activity that occurs under your account. You must provide
                 accurate information and keep it up to date.
@@ -71,7 +71,7 @@ export default function TermsPage() {
             <div className="legal__section">
               <h2>Your content</h2>
               <p>
-                Any reflections, notes, or other content you write in Zenbead ("User
+                Any reflections, notes, or other content you write in ZenBead ("User
                 Content") remain yours. We claim no ownership over your User Content.
               </p>
               <p>
@@ -97,7 +97,7 @@ export default function TermsPage() {
               <h2>Intellectual property</h2>
               <p>
                 The App, its design, graphics, animations, copy, and code are the
-                intellectual property of Zenbead and its creators. Nothing in these
+                intellectual property of ZenBead and its creators. Nothing in these
                 terms grants you any right to use our trademarks, brand marks, or
                 proprietary content beyond your personal use of the App.
               </p>
@@ -116,7 +116,7 @@ export default function TermsPage() {
             <div className="legal__section">
               <h2>Limitation of liability</h2>
               <p>
-                To the fullest extent permitted by applicable law, Zenbead and its
+                To the fullest extent permitted by applicable law, ZenBead and its
                 creators shall not be liable for any indirect, incidental, special,
                 consequential, or punitive damages arising from your use of or inability
                 to use the App. Our total liability shall not exceed the amount you have
@@ -159,15 +159,15 @@ export default function TermsPage() {
           <div className="footer__inner">
             <div className="footer__brand">
               <div className="footer__bead" aria-hidden="true" />
-              <span className="footer__name">zenbead</span>
+              <span className="footer__name">ZenBead</span>
             </div>
             <div className="footer__links">
               <Link href="/" className="footer__link">Home</Link>
               <Link href="/privacy" className="footer__link">Privacy</Link>
+              <Link href="/feedback" className="footer__link">Feedback</Link>
               <Link href="/contact" className="footer__link">Contact</Link>
-              <Link href="/press" className="footer__link">Press</Link>
             </div>
-            <p className="footer__copy">© {new Date().getFullYear()} Zenbead</p>
+            <p className="footer__copy">© {new Date().getFullYear()} ZenBead</p>
           </div>
         </div>
       </footer>

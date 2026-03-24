@@ -4,14 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import "./landing.css";
 
-const INSIGHTS = [
-  "The present moment is the only moment available to us, and it is the door to all moments.",
-  "Wherever you are, be there completely.",
-  "In the middle of difficulty lies opportunity.",
-  "The quieter you become, the more you are able to hear.",
-  "Each morning we are born again. What we do today matters most.",
-];
-
 function AppleLogo({ className }: { className?: string }) {
   return (
     <svg
@@ -36,13 +28,13 @@ export default function LandingPage() {
           <div className="nav__inner">
             <Link href="/" className="nav__brand">
               <div className="nav__bead" aria-hidden="true" />
-              <span className="nav__wordmark">zenbead</span>
+              <span className="nav__wordmark">ZenBead</span>
             </Link>
 
             <div className="nav__links">
               <Link href="#how-it-works" className="nav__link">How it works</Link>
               <Link href="#features" className="nav__link">Features</Link>
-              <Link href="/press" className="nav__link">Press</Link>
+              <Link href="/feedback" className="nav__link">Feedback</Link>
               <Link href="/contact" className="nav__cta">Contact</Link>
             </div>
 
@@ -70,8 +62,8 @@ export default function LandingPage() {
         </button>
         <Link href="#how-it-works" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>How it works</Link>
         <Link href="#features" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>Features</Link>
-        <Link href="/press" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>Press</Link>
         <Link href="/contact" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>Contact</Link>
+        <Link href="/feedback" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>Feedback</Link>
         <Link href="/privacy" className="mobile-menu__link" onClick={() => setMobileOpen(false)}>Privacy</Link>
       </div>
 
@@ -92,9 +84,8 @@ export default function LandingPage() {
                 </h1>
 
                 <p className="hero__body">
-                  Each day a new insight appears — word by word, quietly. Find the bead.
-                  Hold it. Breathe. There&apos;s no target, no streak, no score.
-                  Just one minute, and wherever your mind goes from there.
+                  Simple enough to disappear into. Just you, a thought worth sitting
+                  with, and as long as you need.
                 </p>
 
                 <div className="hero__actions">
@@ -122,25 +113,15 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* ── Philosophy ────────────────────────────────────────── */}
-        <section className="section">
+        {/* ── About ────────────────────────────────────────────── */}
+        <section className="section section--tight">
           <div className="container--narrow">
-            <div className="philosophy">
-              <p className="philosophy__quote">
-                &ldquo;There&apos;s no target here. Just one invitation — stay for at least
-                one minute and see where your mind goes.&rdquo;
+            <div className="about">
+              <h2 className="about__title">Not another meditation app.</h2>
+              <p className="about__body">
+                Each day, something waits for you. A single insight — something to
+                sit with, to turn over slowly, and carry quietly through your day.
               </p>
-              <div className="philosophy__lines">
-                <p className="philosophy__line">
-                  <strong>A timer will guide you,</strong> then quietly disappear.
-                </p>
-                <p className="philosophy__line">
-                  <strong>Stay as long as feels right.</strong> Come back tomorrow.
-                </p>
-                <p className="philosophy__line">
-                  <strong>A new insight will be here,</strong> just for you.
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -149,20 +130,20 @@ export default function LandingPage() {
         <section className="section section--alt" id="how-it-works">
           <div className="container">
             <p className="section__label">How it works</p>
-            <h2 className="section__title">Three gestures. No instructions needed.</h2>
+            <h2 className="section__title">Everything fits in the palm of your hand.</h2>
             <p className="section__body">
-              Zenbead is designed to get out of your way. The whole practice
-              fits in the palm of your hand.
+              The insight, the stillness, the space to write. The whole practice,
+              in one quiet moment.
             </p>
 
             <div className="steps">
               <div className="step">
                 <div className="step__number">01</div>
                 <div>
-                  <p className="step__title">Read today&apos;s insight</p>
+                  <p className="step__title">Something waits for you</p>
                   <p className="step__body">
-                    A new mindfulness insight is waiting each morning, revealed one word
-                    at a time so you actually read it — not just glance.
+                    Open the app. There&apos;s always something here for today.
+                    Take your time with it — there&apos;s no rush.
                   </p>
                 </div>
               </div>
@@ -170,10 +151,10 @@ export default function LandingPage() {
               <div className="step">
                 <div className="step__number">02</div>
                 <div>
-                  <p className="step__title">Swipe up. Find the bead.</p>
+                  <p className="step__title">Be still for a moment</p>
                   <p className="step__body">
-                    Swipe up to reveal a glowing bead. Hold it to begin your practice.
-                    The bead breathes with you. Release when you&apos;re done.
+                    Find the Bead. Hold it briefly to begin, then let go and simply
+                    be with your thoughts, for as long as you need.
                   </p>
                 </div>
               </div>
@@ -181,10 +162,11 @@ export default function LandingPage() {
               <div className="step">
                 <div className="step__number">03</div>
                 <div>
-                  <p className="step__title">Reflect, if something surfaced</p>
+                  <p className="step__title">Let it settle</p>
                   <p className="step__body">
-                    You might find something has come up. There&apos;s a quiet space to
-                    write it down — or not. No pressure. Just possibility.
+                    When you&apos;re done, you may find something has surfaced.
+                    There&apos;s a space to write it down — a word, a sentence,
+                    or nothing at all.
                   </p>
                 </div>
               </div>
@@ -198,7 +180,7 @@ export default function LandingPage() {
             <p className="section__label">Features</p>
             <h2 className="section__title">Built with intention. Not addiction.</h2>
             <p className="section__body">
-              Every design decision in Zenbead asks the same question:
+              Every decision in ZenBead asks the same question:
               does this serve the practice, or distract from it?
             </p>
 
@@ -206,28 +188,15 @@ export default function LandingPage() {
               <div className="feature-card">
                 <div className="feature-card__icon" aria-hidden="true">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 6v6l4 2" />
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
                 </div>
-                <p className="feature-card__title">The timer that disappears</p>
+                <p className="feature-card__title">Private by design</p>
                 <p className="feature-card__body">
-                  A timer guides your first minute, then quietly fades. You meditate
-                  without clock-watching — just presence.
-                </p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-card__icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M12 2a9 9 0 1 0 9 9" />
-                    <path d="M12 6v6l4 2M20 2l-5 5" />
-                  </svg>
-                </div>
-                <p className="feature-card__title">Daily insights, deterministic</p>
-                <p className="feature-card__body">
-                  30 carefully chosen mindfulness insights, mapped to dates. The same
-                  insight on the same day, every year. Predictable, not algorithmic.
+                  Your journal is stored privately and securely. Your personal identity
+                  is never attached to anything you do in the app — you&apos;re known
+                  here only by a name the app chose for you. Feel free to explore
+                  yourself fully, without judgment.
                 </p>
               </div>
 
@@ -238,23 +207,11 @@ export default function LandingPage() {
                     <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
                   </svg>
                 </div>
-                <p className="feature-card__title">Reflection journal</p>
+                <p className="feature-card__title">A space to reflect</p>
                 <p className="feature-card__body">
-                  After each session, a quiet prompt: <em>What came up for you?</em>
-                  Write freely. Your words are saved privately and sync across devices.
-                </p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-card__icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                </div>
-                <p className="feature-card__title">Private by design</p>
-                <p className="feature-card__body">
-                  No social features, no engagement metrics, no notifications designed
-                  to pull you back. Your journal never leaves your hands without consent.
+                  After each session, a quiet space to write down anything that surfaced.
+                  Your reflections are saved and travel with you if you choose to
+                  create an account.
                 </p>
               </div>
 
@@ -267,83 +224,63 @@ export default function LandingPage() {
                 </div>
                 <p className="feature-card__title">Cross-device sync</p>
                 <p className="feature-card__body">
-                  Your beads and reflections travel with you. Opt into a private account
-                  and everything syncs silently across your devices.
+                  Your history and reflections travel with you. Opt into a private
+                  account and everything syncs silently across your devices.
                 </p>
               </div>
 
               <div className="feature-card">
                 <div className="feature-card__icon" aria-hidden="true">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
                   </svg>
                 </div>
-                <p className="feature-card__title">A living bead</p>
+                <p className="feature-card__title">One gentle reminder</p>
                 <p className="feature-card__body">
-                  The bead is never still — a subtle living swirl of sage and teal at
-                  rest, breathing gently as you hold it. Crafted haptics mark the end
-                  like a struck gong.
+                  A single daily notification lets you know when a new insight has
+                  arrived. Turn it on or off — entirely your call.
+                </p>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <line x1="12" y1="1" x2="12" y2="23" />
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                  </svg>
+                </div>
+                <p className="feature-card__title">Free to begin.</p>
+                <p className="feature-card__body">
+                  The full daily practice is free. ZenBead is built on the belief
+                  that the practice itself shouldn&apos;t cost anything.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── Why ZenBead ──────────────────────────────────────── */}
-        <section className="section section--alt">
-          <div className="container">
-            <p className="section__label">Why Zenbead</p>
-            <h2 className="section__title">Mindfulness without the noise.</h2>
-            <p className="section__body">
-              The other apps are built to keep you inside them. Zenbead is built to
-              put your phone down.
+        {/* ── Standalone statement ──────────────────────────────── */}
+        <section className="section section--statement">
+          <div className="container--narrow">
+            <p className="standalone-statement">
+              Every other app is trying to keep you. ZenBead is trying to release you.
             </p>
-
-            <div className="compare">
-              <div className="compare-card compare-card--them">
-                <p className="compare-card__label">Other apps</p>
-                <p className="compare-card__title">More is always more</p>
-                <ul className="compare-list">
-                  <li className="compare-list__item">Guided programmes and tracks to unlock</li>
-                  <li className="compare-list__item">Streaks, badges, and achievement systems</li>
-                  <li className="compare-list__item">Notifications engineered to re-engage</li>
-                  <li className="compare-list__item">Subscriptions with paywalled core features</li>
-                  <li className="compare-list__item">Sleep stories, breathing exercises, masterclasses</li>
-                </ul>
-              </div>
-
-              <div className="compare-card compare-card--us">
-                <p className="compare-card__label">Zenbead</p>
-                <p className="compare-card__title">One thing, done well</p>
-                <ul className="compare-list">
-                  <li className="compare-list__item">One daily insight, one bead, one practice</li>
-                  <li className="compare-list__item">No streaks. The practice exists without reward</li>
-                  <li className="compare-list__item">One optional, gentle daily reminder</li>
-                  <li className="compare-list__item">No paywall. The full practice, free</li>
-                  <li className="compare-list__item">Quiet minimalism — designed to disappear</li>
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
 
-        {/* ── Insights preview ─────────────────────────────────── */}
-        <section className="section">
-          <div className="container">
-            <p className="section__label">Daily insights</p>
-            <h2 className="section__title">Something to sit with.</h2>
-            <p className="section__body">
-              30 rotating insights, thoughtfully chosen. Each one a door into stillness,
-              not a performance goal.
-            </p>
-
-            <div className="insights-preview">
-              {INSIGHTS.map((insight, i) => (
-                <blockquote key={i} className="insight-item">
-                  &ldquo;{insight}&rdquo;
-                </blockquote>
-              ))}
+        {/* ── About the Insights ───────────────────────────────── */}
+        <section className="section section--tight">
+          <div className="container--narrow">
+            <div className="insights-about">
+              <p className="section__label">About the insights</p>
+              <h2 className="insights-about__title">One voice, drawn from many.</h2>
+              <p className="insights-about__body">
+                Each day&apos;s insight is drawn from the broad range of human wisdom —
+                philosophy, contemplative tradition, psychology, poetry. No single school
+                of thought. No doctrine. Only ideas that have proven, across time and
+                culture, to be worth sitting with.
+              </p>
             </div>
           </div>
         </section>
@@ -356,7 +293,7 @@ export default function LandingPage() {
               Your moment is waiting.
             </h2>
             <p className="cta-section__body">
-              Take your time with it. There&apos;s no rush. Let it settle before you move on.
+              Come back tomorrow. A new insight will be here, just for you.
             </p>
             <div className="cta-section__badge-wrap">
               <div className="cta-badge" aria-label="App Store — coming soon">
@@ -368,7 +305,7 @@ export default function LandingPage() {
               </div>
               <p className="cta-section__soon">iOS — coming soon</p>
             </div>
-          </div>
+        </div>
         </section>
       </main>
 
@@ -378,21 +315,21 @@ export default function LandingPage() {
           <div className="footer__inner">
             <div className="footer__brand">
               <div className="footer__bead" aria-hidden="true" />
-              <span className="footer__name">zenbead</span>
+              <span className="footer__name">ZenBead</span>
             </div>
 
             <div className="footer__links">
               <Link href="/privacy" className="footer__link">Privacy</Link>
               <Link href="/terms" className="footer__link">Terms</Link>
+              <Link href="/feedback" className="footer__link">Feedback</Link>
               <Link href="/contact" className="footer__link">Contact</Link>
-              <Link href="/press" className="footer__link">Press</Link>
             </div>
 
             <p className="footer__copy">
-              © {new Date().getFullYear()} Zenbead
+              © {new Date().getFullYear()} ZenBead
             </p>
           </div>
-        </div>
+    </div>
       </footer>
     </>
   );
