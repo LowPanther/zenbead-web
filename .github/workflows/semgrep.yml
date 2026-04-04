@@ -16,7 +16,7 @@ jobs:
     container:
       image: semgrep/semgrep
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       # `auto` includes TypeScript/JavaScript rules appropriate for this repo.
       - name: Run Semgrep
