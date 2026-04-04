@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
+import { ZENBEAD_THEME_STORAGE_KEY } from "./themeConstants";
+import { SiteHeader } from "./SiteHeader";
 import "./globals.css";
 
 const inter = Inter({
@@ -37,9 +40,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeBootstrap = `(function(){try{var k=${JSON.stringify(ZENBEAD_THEME_STORAGE_KEY)};var s=localStorage.getItem(k);var t=s==='light'||s==='dark'?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
+
   return (
-    <html lang="en" className={inter.variable}>
-      <body>{children}</body>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body>
+        <Script id="zenbead-theme-init" strategy="beforeInteractive">
+          {themeBootstrap}
+        </Script>
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }
