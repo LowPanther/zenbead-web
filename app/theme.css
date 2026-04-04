@@ -1,31 +1,11 @@
+/* Matches ZenBead iOS ZenColors.swift semantic tokens (light/dark). */
 :root {
-  /* Brand palette */
+  /* Brand palette (both modes) */
   --color-mist:        #CAD2C5;
   --color-sage:        #84A98C;
   --color-eucalyptus:  #52796F;
   --color-deep-teal:   #354F52;
   --color-night-tide:  #2F3E46;
-
-  /* Backgrounds */
-  --color-bg:          #080C0D;
-  --color-surface:     #111819;
-  --color-surface-2:   #172022;
-  --color-border:      rgba(82, 121, 111, 0.2);
-  --color-border-soft: rgba(202, 210, 197, 0.08);
-
-  /* Text */
-  --color-text-primary:   #F0EDE8;
-  --color-text-secondary: #9AADA6;
-  --color-text-muted:     #637770;
-
-  /* Accent */
-  --color-accent:      var(--color-sage);
-  --color-accent-glow: rgba(132, 169, 140, 0.35);
-
-  /* Gradients */
-  --gradient-bead: radial-gradient(circle at 38% 36%, #9BBFA5 0%, #84A98C 25%, #52796F 60%, #354F52 100%);
-  --gradient-hero: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(82, 121, 111, 0.12) 0%, transparent 70%);
-  --gradient-section: linear-gradient(180deg, transparent 0%, rgba(47, 62, 70, 0.15) 50%, transparent 100%);
 
   /* Typography */
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -65,13 +45,93 @@
   --radius-xl:   32px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-bead: 0 0 40px rgba(132, 169, 140, 0.30), 0 0 90px rgba(82, 121, 111, 0.15);
-  --shadow-bead-hover: 0 0 60px rgba(132, 169, 140, 0.45), 0 0 120px rgba(82, 121, 111, 0.25);
-  --shadow-card: 0 1px 3px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2);
-
   /* Transitions */
   --transition-fast:   150ms ease;
   --transition-base:   250ms ease;
   --transition-slow:   400ms ease;
+
+  /* Default / SSR: dark (matches app dark + prior site) */
+  color-scheme: dark;
+  --color-bg:          #141C1F;
+  --color-surface:     #2F3E46;
+  --color-surface-2:   #354F52;
+  --color-border:      rgba(82, 121, 111, 0.28);
+  --color-border-soft: rgba(255, 255, 255, 0.07);
+  --color-text-primary:   #F5F0EB;
+  --color-text-secondary: rgba(245, 240, 235, 0.65);
+  --color-text-muted:     #84A098;
+  --color-accent:         var(--color-sage);
+  --color-accent-glow:    rgba(132, 169, 140, 0.35);
+  --nav-bg:               rgba(20, 28, 31, 0.78);
+  --nav-border:           rgba(255, 255, 255, 0.07);
+  /* Bead: ZenColor.mist → sage → eucalyptus → deepTeal only */
+  --gradient-bead: radial-gradient(circle at 38% 36%, #CAD2C5 0%, #84A98C 28%, #52796F 58%, #354F52 100%);
+  /* Filled actions: dark = eucalyptus → sage on hover (iOS-style contrast) */
+  --color-cta-bg:        #52796F;
+  --color-cta-bg-hover:  #84A98C;
+  --color-on-cta:        #F5F0EB;
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(82, 121, 111, 0.14) 0%, transparent 70%);
+  --gradient-section: linear-gradient(180deg, transparent 0%, rgba(47, 62, 70, 0.2) 50%, transparent 100%);
+  --shadow-bead: 0 0 40px rgba(132, 169, 140, 0.30), 0 0 90px rgba(82, 121, 111, 0.15);
+  --shadow-bead-hover: 0 0 60px rgba(132, 169, 140, 0.45), 0 0 120px rgba(82, 121, 111, 0.25);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.35), 0 4px 16px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg:          #141C1F;
+  --color-surface:     #2F3E46;
+  --color-surface-2:   #354F52;
+  --color-border:      rgba(82, 121, 111, 0.28);
+  --color-border-soft: rgba(255, 255, 255, 0.07);
+  --color-text-primary:   #F5F0EB;
+  --color-text-secondary: rgba(245, 240, 235, 0.65);
+  --color-text-muted:     #84A098;
+  --color-accent:         var(--color-sage);
+  --color-accent-glow:    rgba(132, 169, 140, 0.35);
+  --nav-bg:               rgba(20, 28, 31, 0.78);
+  --nav-border:           rgba(255, 255, 255, 0.07);
+  --gradient-bead: radial-gradient(circle at 38% 36%, #CAD2C5 0%, #84A98C 28%, #52796F 58%, #354F52 100%);
+  --color-cta-bg:        #52796F;
+  --color-cta-bg-hover:  #84A98C;
+  --color-on-cta:        #F5F0EB;
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(82, 121, 111, 0.14) 0%, transparent 70%);
+  --gradient-section: linear-gradient(180deg, transparent 0%, rgba(47, 62, 70, 0.2) 50%, transparent 100%);
+  --shadow-bead: 0 0 40px rgba(132, 169, 140, 0.30), 0 0 90px rgba(82, 121, 111, 0.15);
+  --shadow-bead-hover: 0 0 60px rgba(132, 169, 140, 0.45), 0 0 120px rgba(82, 121, 111, 0.25);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.35), 0 4px 16px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --color-bg:          #F5F0EB;
+  --color-surface:     #EAF0EA;
+  --color-surface-2:   #E0E8E0;
+  --color-border:      rgba(53, 79, 82, 0.18);
+  --color-border-soft: rgba(0, 0, 0, 0.08);
+  --color-text-primary:   #1C2826;
+  --color-text-secondary: rgba(28, 40, 38, 0.65);
+  --color-text-muted:     #5A6B66;
+  --color-accent:         var(--color-sage);
+  --color-accent-glow:    rgba(132, 169, 140, 0.28);
+  --nav-bg:               rgba(245, 240, 235, 0.82);
+  --nav-border:           rgba(0, 0, 0, 0.08);
+  /* Bead on light bg: iOS zenSurface → mist → sage → eucalyptus → deepTeal */
+  --gradient-bead: radial-gradient(
+    circle at 36% 32%,
+    #EAF0EA 0%,
+    #CAD2C5 18%,
+    #84A98C 44%,
+    #52796F 72%,
+    #354F52 100%
+  );
+  /* Matches iOS Color.actionPrimary (sage); hover deepens to eucalyptus */
+  --color-cta-bg:        #84A98C;
+  --color-cta-bg-hover:  #52796F;
+  --color-on-cta:        #F5F0EB;
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(132, 169, 140, 0.18) 0%, transparent 72%);
+  --gradient-section: linear-gradient(180deg, transparent 0%, rgba(132, 169, 140, 0.12) 50%, transparent 100%);
+  --shadow-bead: 0 0 28px rgba(82, 121, 111, 0.2), 0 0 56px rgba(53, 79, 82, 0.12);
+  --shadow-bead-hover: 0 0 40px rgba(132, 169, 140, 0.28), 0 0 80px rgba(82, 121, 111, 0.15);
+  --shadow-card: 0 1px 2px rgba(28, 40, 38, 0.06), 0 4px 20px rgba(28, 40, 38, 0.06);
 }

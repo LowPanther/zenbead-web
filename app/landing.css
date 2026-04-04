@@ -22,11 +22,11 @@
   right: 0;
   z-index: 100;
   padding: var(--space-5) 0;
-  background: rgba(8, 12, 13, 0.75);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--color-border-soft);
-  transition: background var(--transition-base);
+  border-bottom: 1px solid var(--nav-border);
+  transition: background var(--transition-base), border-color var(--transition-base);
 }
 
 .nav__inner {
@@ -55,6 +55,12 @@
   font-weight: 500;
   letter-spacing: -0.03em;
   color: var(--color-text-primary);
+}
+
+.nav__end {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
 }
 
 .nav__links {
@@ -106,6 +112,48 @@
   transition: all var(--transition-base);
 }
 
+/* Theme toggle — right side of nav (with nav__links on desktop) */
+.theme-toggle {
+  position: relative;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  color: var(--color-sage);
+  border-color: rgba(132, 169, 140, 0.35);
+}
+
+.theme-toggle__icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.85);
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+  pointer-events: none;
+}
+
+.theme-toggle__icon[data-visible="true"] {
+  opacity: 1;
+  transform: scale(1);
+}
+
 /* ─── Mobile Menu ─────────────────────────────────────────── */
 
 .mobile-menu {
@@ -144,6 +192,25 @@
   font-size: var(--text-2xl);
   line-height: 1;
   padding: var(--space-2);
+}
+
+.mobile-menu__theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+  padding-top: var(--space-10);
+  border-top: 1px solid var(--color-border-soft);
+  width: min(100%, 320px);
+}
+
+.mobile-menu__theme-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 /* ─── Hero ────────────────────────────────────────────────── */
@@ -888,8 +955,8 @@
   font-size: var(--text-base);
   font-weight: 600;
   font-family: var(--font-sans);
-  color: var(--color-bg);
-  background: var(--color-eucalyptus);
+  color: var(--color-on-cta);
+  background: var(--color-cta-bg);
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -897,7 +964,7 @@
 }
 
 .feedback-form__submit:hover {
-  background: var(--color-sage);
+  background: var(--color-cta-bg-hover);
 }
 
 .feedback-form__submit:active {

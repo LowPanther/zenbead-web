@@ -1,0 +1,23 @@
+name: Semgrep
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  semgrep:
+    name: Scan
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
+    steps:
+      - uses: actions/checkout@v4
+
+      # `auto` includes TypeScript/JavaScript rules appropriate for this repo.
+      - name: Run Semgrep
+        run: semgrep scan --config auto --verbose --error
