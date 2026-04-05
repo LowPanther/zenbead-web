@@ -2,11 +2,15 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { NavJournalQrIcon } from "./NavJournalQrIcon";
 import { ThemeToggle } from "./ThemeToggle";
 import "./landing.css";
 
+const JOURNAL_LINK_LABEL =
+  "Journal on your computer — pair with the ZenBead app using a QR code";
+
 /**
- * Shared top navigation (home, Journal /reflect, etc.) for all pages.
+ * Shared top navigation (home, reflect / journal entry, etc.) for all pages.
  */
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -21,16 +25,13 @@ export function SiteHeader() {
               <span className="nav__wordmark">ZenBead</span>
             </Link>
 
-            <div className="nav__end">
+            <div className="nav__right">
               <div className="nav__links">
                 <Link href="/#how-it-works" className="nav__link">
                   How it works
                 </Link>
                 <Link href="/#features" className="nav__link">
                   Features
-                </Link>
-                <Link href="/reflect" className="nav__link">
-                  Journal
                 </Link>
                 <Link href="/feedback" className="nav__link">
                   Feedback
@@ -39,19 +40,26 @@ export function SiteHeader() {
                   Contact
                 </Link>
               </div>
+              <Link
+                href="/reflect"
+                className="nav__link nav__journal-qr"
+                aria-label={JOURNAL_LINK_LABEL}
+                title={JOURNAL_LINK_LABEL}
+              >
+                <NavJournalQrIcon />
+              </Link>
+              <button
+                type="button"
+                className="nav__mobile-toggle"
+                onClick={() => setMobileOpen(true)}
+                aria-label="Open menu"
+              >
+                <span />
+                <span />
+                <span />
+              </button>
               <ThemeToggle />
             </div>
-
-            <button
-              type="button"
-              className="nav__mobile-toggle"
-              onClick={() => setMobileOpen(true)}
-              aria-label="Open menu"
-            >
-              <span />
-              <span />
-              <span />
-            </button>
           </div>
         </div>
       </nav>
@@ -85,10 +93,12 @@ export function SiteHeader() {
         </Link>
         <Link
           href="/reflect"
-          className="mobile-menu__link"
+          className="mobile-menu__link mobile-menu__journal-qr"
+          aria-label={JOURNAL_LINK_LABEL}
+          title={JOURNAL_LINK_LABEL}
           onClick={() => setMobileOpen(false)}
         >
-          Journal
+          <NavJournalQrIcon />
         </Link>
         <Link
           href="/contact"

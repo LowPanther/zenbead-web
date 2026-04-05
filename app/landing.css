@@ -57,10 +57,12 @@
   color: var(--color-text-primary);
 }
 
-.nav__end {
+/* Text links + QR + menu + theme — last item is the theme toggle. */
+.nav__right {
   display: flex;
   align-items: center;
   gap: var(--space-5);
+  flex-shrink: 0;
 }
 
 .nav__links {
@@ -78,6 +80,18 @@
 
 .nav__link:hover {
   color: var(--color-text-primary);
+}
+
+.nav__journal-qr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.nav__journal-qr svg {
+  display: block;
 }
 
 .nav__cta {
@@ -112,7 +126,7 @@
   transition: all var(--transition-base);
 }
 
-/* Theme toggle — right side of nav (with nav__links on desktop) */
+/* Theme toggle — last flex item in `.nav__right` (furthest right in the bar on mobile + desktop) */
 .theme-toggle {
   position: relative;
   flex-shrink: 0;
@@ -182,6 +196,20 @@
 
 .mobile-menu__link:hover {
   color: var(--color-text-primary);
+}
+
+.mobile-menu__journal-qr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  line-height: 0;
+}
+
+.mobile-menu__journal-qr svg {
+  width: 2rem;
+  height: 2rem;
+  display: block;
 }
 
 .mobile-menu__close {
