@@ -21,7 +21,9 @@ type Phase =
   | "qr"
   | "expired"
   | "error"
-  | "authenticated";
+  | "authenticated"
+  /** After user taps Done on the post-save prompt; show Refresh for a new QR. */
+  | "session_done";
 
 function formatMmSs(totalSeconds: number): string {
   const s = Math.max(0, Math.floor(totalSeconds));
@@ -164,10 +166,29 @@ export function ReflectSessionClient() {
     return () => window.clearInterval(id);
   }, [phase, expiresAtMs]);
 
+  if (phase === "session_done") {
+    return (
+      <div className="reflect reflect--session-done">
+        <div className="reflect__inner reflect__inner--refresh">
+          <button
+            type="button"
+            className="reflect__btn reflect__btn--refresh"
+            onClick={() => void bootstrapSession()}
+          >
+            Refresh
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if (phase === "authenticated" && sessionToken) {
     return (
       <div className="reflect reflect--writing">
-        <ReflectWriteSurface sessionToken={sessionToken} />
+        <ReflectWriteSurface
+          sessionToken={sessionToken}
+          onJournalDone={() => setPhase("session_done")}
+        />
       </div>
     );
   }

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import "./landing.css";
+import { WaitlistWidget } from "./waitlist/WaitlistWidget";
 
 function AppleLogo({ className }: { className?: string }) {
   return (
@@ -50,6 +51,12 @@ export default function LandingPage() {
                   </div>
                   <span className="hero__coming-soon">iOS — coming soon</span>
                 </div>
+
+                <p className="hero__beta-wrap">
+                  <a href="#beta-waitlist" className="hero__beta-cta">
+                    Join the beta waitlist
+                  </a>
+                </p>
               </div>
 
               <div className="hero__visual" aria-hidden="true">
@@ -258,6 +265,14 @@ export default function LandingPage() {
               <p className="cta-section__soon">iOS — coming soon</p>
             </div>
         </div>
+        </section>
+
+        {/* ── Beta waitlist (page bottom) ───────────────────────── */}
+        <section className="section section--tight section--waitlist-bottom" id="beta-waitlist">
+          <div className="container--narrow">
+            <p className="section__label">Beta</p>
+            <WaitlistWidget />
+          </div>
         </section>
       </main>
 
